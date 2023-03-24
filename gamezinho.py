@@ -1,5 +1,6 @@
 from random import choice, randint
 from time import sleep, time
+from os import system, name
 
 situacoes = ['Você encontrou uma bolsa jogada no chão.', 
     'Há um Troll valente barrando sua passagem.',
@@ -37,7 +38,13 @@ def_troll = randint(0, 25)
 atk_drag = 52
 def_drag = 68
 
+# limpa a tela do terminal
+
+def limpa_tela():
+    system('cls' if name == 'nt' else 'clear')
+
 while True:
+    limpa_tela()
     print('-'*45)
     print(f'Coins: {moedas}            Atk: {atk_player}    Def: {def_player}')
     print('-'*45)
